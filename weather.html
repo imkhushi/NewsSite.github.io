@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <style>
+    .navbar{
+    position:fixed;
+    z-index: 100;
+    width:100%;
+    top: 0;
+    left: 0;
+}
+
+.container{
+  padding-top: 35px;
+}
+
+.table-responsive{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+.heading{
+  text-shadow: 1.5px 1.5px 2px rgb(31, 28, 28);
+  color: rgb(231, 197, 24);
+}
+.headtable{
+  display:grid;
+  grid-template-columns: repeat(6,1fr);
+}
+.bodytable{
+  display:grid;
+  grid-template-columns: repeat(6,1fr);
+}
+
+body{
+    font-family:'Lato', sans-serif;
+}
+
+  </style>
+  
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand text-warning" href="#">Weather APP</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input id="city" class="form-control me-2" type="search" placeholder="Search a place" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+    <h1 class="heading my-4 text-center"> Weather forecast for <span id="cityname"></span></h1>
+      
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+                    <div class="card-header py-3 text-bg-secondary border-dark">
+                    <h4 class="my-0 fw-normal">Temperatures Info</h4>
+                  </div>
+                  <div class="card-body">
+                    <img height="40px" width="40px" src="location.png"/>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Temperature is <span id="temp"></span></li>
+                      <li>Min Temperature is <span id="min_temp"></span></li>
+                      <li>Max Temperature is <span id="max_temp"></span></li>
+                      <li></li>
+                    </ul>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+                    <div class="card-header py-3 text-bg-secondary border-dark">
+                    <h4 class="my-0 fw-normal">Wind Info</h4>
+                  </div>
+                  <div class="card-body">
+                    <img height="40px" width="40px" src="air-flow.png"/>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Wind speed is <span id="wind_speed"></span></li>
+                        <li>Wind Degree is <span id="wind_degrees"></span></li>
+                        <li>Feels like <span id="feels_like"></span></li>
+                    </ul>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-secondary">
+                  <div class="card-header py-3 text-bg-secondary border-dark">
+                    <h4 class="my-0 fw-normal">Humidity</h4>
+                  </div>
+                  <div class="card-body">
+                    <img height="40px" width="40px" src="humidity.png"/>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Humidity is <span id="humidity"></span></li>
+                        <li>Cloud % is  <span id="cloud_pct"></span></li>
+                        <li>Chances of PPT is <span id="ppt"></span></li>
+                    </ul>
+                   
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <h2 class="heading display-6 text-center mb-4">Weather of other common places</h2>
+        
+            <div class="table-responsive">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="shanghai">
+                <label class="form-check-label" for="flexRadioDefault1">
+                 Shanghai
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="delhi" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                 Delhi
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="mumbai" checked>
+                <label class="form-check-label" for="flexRadioDefault3">
+                 Mumbai
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="singapore" checked>
+                <label class="form-check-label" for="flexRadioDefault4">
+                 Singapore
+                </label>
+              </div>
+              </div>
+              <table class="table">
+                <thead>
+                  <tr class="headtable">
+<th class="dataheader">cloud_pct </th>
+<th class="dataheader">temp</th>
+
+<th class="dataheader">humidity</th>
+<th class="dataheader">min_temp </th>
+ <th class="dataheader">max_temp </th>
+<th class="dataheader">wind_speed </th> 
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr class="bodytable">
+                    <td class="data_d" id="cloud_pct_d"><svg class="bi" width="100%" height="24"><use xlink:href="#check"></use></svg></td>
+                    <td class="data_d" id="temp_d"><svg class="bi" width="100%" height="24"><use xlink:href="#check"></use></svg></td>
+                    <td class="data_d" id="humidity_d"><svg class="bi" width="100%" height="24"><use xlink:href="#check"></use></svg></td>
+                    <td class="data_d" id="min_temp_d"><svg class="bi" width="100%" height="24"><use xlink:href="#check"></use></svg></td>
+                    <td class="data_d" id="max_temp_d"><svg class="bi" width="100%" height="24"><use xlink:href="#check"></use></svg></td>
+                    <td class="data_d" id="wind_speed_d"><svg class="bi" width="100%" height="24"><use xlink:href="#check"></use></svg></td>
+                    
+                  </tr>
+                  
+                </tbody>
+        
+              </table>
+            </div>
+          </main>
+      </div>
+    <script src="script.js"></script>
+  </body>
+</html>
